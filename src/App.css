@@ -1,0 +1,10 @@
+.dotted-background {
+    background-color: #16223c;
+    background-image: radial-gradient(
+        rgba(255 , 255 , 255 , 0.28) 1px ,
+        transparent 1px
+    );
+    /* Draws a circular dot shape using a gradient */
+    background-size : 30px 30px;
+    /* Repeats the dot every 30px (grid spacing) */
+}
