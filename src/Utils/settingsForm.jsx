@@ -55,7 +55,7 @@ const SettingsForm = () => {
                         Authorization: `Bearer ${token}`,
                     }
                 };
-                const { data } = await axios.get("http://localhost:8000/api/settings/getDealership", config);
+                const { data } = await axios.get("https://autora-backend.vercel.app/api/settings/getDealership", config);
 
                 setWorkingHours(data?.workingHours);
 
@@ -78,7 +78,7 @@ const SettingsForm = () => {
                         Authorization: `Bearer ${token}`,
                     }
                 };
-                const { data } = await axios.get(`http://localhost:8000/api/settings/fetchUsers?search=${userSearch}`, config);
+                const { data } = await axios.get(`https://autora-backend.vercel.app/api/settings/fetchUsers?search=${userSearch}`, config);
 
 
                 // console.log("users jo aye " , data);
@@ -105,7 +105,7 @@ const SettingsForm = () => {
             const body = {
                 workingHours
             }
-            const { data } = await axios.post("http://localhost:8000/api/settings/update", body, config);
+            const { data } = await axios.post("https://autora-backend.vercel.app/api/settings/update", body, config);
 
             setWorkingHours(data?.workingHours);
 
@@ -137,7 +137,7 @@ const SettingsForm = () => {
                     userId: user._id,
                     role: "ADMIN"
                 }
-                await axios.post("http://localhost:8000/api/settings/updateUser", body, config);
+                await axios.post("https://autora-backend.vercel.app/api/settings/updateUser", body, config);
 
                 setUsers((prev) => {
                     const newArr = prev.map((ele) => {
@@ -175,7 +175,7 @@ const SettingsForm = () => {
                     userId: user._id,
                     role: "USER"
                 }
-                await axios.post("http://localhost:8000/api/settings/updateUser", body, config);
+                await axios.post("https://autora-backend.vercel.app/api/settings/updateUser", body, config);
                 setUsers((prev) => {
                     const newArr = prev.map((ele) => {
                         if (ele._id === user._id) {

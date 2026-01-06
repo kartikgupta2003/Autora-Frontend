@@ -21,7 +21,7 @@ const ShowACarPage = () => {
                     }
                 };
 
-                const { data } = await axios.get(`http://localhost:8000/api/showCars/getCar?id=${id}`, config);
+                const { data } = await axios.get(`https://autora-backend.vercel.app/api/showCars/getCar?id=${id}`, config);
 
                 // console.log("car ka info show a car page pe ", data);
                 setCarData(data);

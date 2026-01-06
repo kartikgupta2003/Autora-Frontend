@@ -30,7 +30,7 @@ const CarCard = ({ car , setRefresh=()=> null}) => {
                 }
             };
 
-            const {data}= await axios.get(`http://localhost:8000/api/showCars/toggleCar?id=${car._id}` , config);
+            const {data}= await axios.get(`https://autora-backend.vercel.app/api/showCars/toggleCar?id=${car._id}` , config);
             // console.log(data);
             setIsSaved((prev)=>{
                 return (!prev)

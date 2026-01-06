@@ -47,7 +47,7 @@ const AdminTestDriveList = () => {
                     Authorization: `Bearer ${token}`,
                 }
             };
-            const { data } = await axios.get(`http://localhost:8000/api/adminDrive/fetchDrives?search=${search}&status=${statusFilter}`, config);
+            const { data } = await axios.get(`https://autora-backend.vercel.app/api/adminDrive/fetchDrives?search=${search}&status=${statusFilter}`, config);
 
             setTestDrives(data);
             setFetching(false);
@@ -70,7 +70,7 @@ const AdminTestDriveList = () => {
                 }
             };
 
-            const {data} = await axios.get(`http://localhost:8000/api/test-drive/delete?id=${id}` , config);
+            const {data} = await axios.get(`https://autora-backend.vercel.app/api/test-drive/delete?id=${id}` , config);
 
             setCancelling(false);
             setRefresh((prev)=> !prev);
@@ -91,7 +91,7 @@ const AdminTestDriveList = () => {
                 }
             };
 
-            const {data} = await axios.get(`http://localhost:8000/api/adminDrive/updateDrives?id=${bookingId}&status=${newStatus}` , config);
+            const {data} = await axios.get(`https://autora-backend.vercel.app/api/adminDrive/updateDrives?id=${bookingId}&status=${newStatus}` , config);
 
             setRefresh((prev)=> !prev);
             setUpdatingStatus(false);
@@ -113,7 +113,7 @@ const AdminTestDriveList = () => {
                         Authorization: `Bearer ${token}`,
                     }
                 };
-                const { data } = await axios.get(`http://localhost:8000/api/adminDrive/fetchDrives?search=${search}&status=${statusFilter}`, config);
+                const { data } = await axios.get(`https://autora-backend.vercel.app/api/adminDrive/fetchDrives?search=${search}&status=${statusFilter}`, config);
 
                 setTestDrives(data);
 

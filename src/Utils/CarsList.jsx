@@ -64,7 +64,7 @@ const CarsList = ({ index, setIndex }) => {
                         Authorization: `Bearer ${token}`
                     }
                 };
-                const { data } = await axios.get(`http://localhost:8000/api/car/fetch?search=${search}`, config);
+                const { data } = await axios.get(`https://autora-backend.vercel.app/api/car/fetch?search=${search}`, config);
 
                 // console.log("car jo ayi hai ", data);
                 setCarsData(data);
@@ -129,7 +129,7 @@ const CarsList = ({ index, setIndex }) => {
                     Authorization: `Bearer ${token}`,
                 }
             };
-            await axios.post("http://localhost:8000/api/car/update", body, config);
+            await axios.post("https://autora-backend.vercel.app/api/car/update", body, config);
 
             setCarsData((prev) => {
                 const newArr = prev.map((car) => {
@@ -160,7 +160,7 @@ const CarsList = ({ index, setIndex }) => {
                     Authorization: `Bearer ${token}`,
                 }
             };
-            await axios.post("http://localhost:8000/api/car/update", body, config);
+            await axios.post("https://autora-backend.vercel.app/api/car/update", body, config);
 
             setCarsData((prev) => {
                 const newArr = prev.map((car) => {
@@ -191,7 +191,7 @@ const CarsList = ({ index, setIndex }) => {
                     Authorization: `Bearer ${token}`,
                 }
             };
-            await axios.delete(`http://localhost:8000/api/car/delete/${carToDelete._id}`, config);
+            await axios.delete(`https://autora-backend.vercel.app/api/car/delete/${carToDelete._id}`, config);
 
             setCarsData((prev) => {
                 const newArr = prev.filter((car) => {

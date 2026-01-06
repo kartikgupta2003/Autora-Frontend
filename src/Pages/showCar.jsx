@@ -20,7 +20,7 @@ const ShowCar = () => {
                         Authorization: `Bearer ${token}`
                     }
                 };
-                const { data } = await axios.get("http://localhost:8000/api/showCars/carFilters", config);
+                const { data } = await axios.get("https://autora-backend.vercel.app/api/showCars/carFilters", config);
 
                 // console.log("car filters " , data);
 

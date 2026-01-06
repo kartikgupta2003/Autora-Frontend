@@ -26,7 +26,7 @@ const AdminLayout = () => {
                         Authorization: `Bearer ${token}`,   // 🔥 this is REQUIRED
                     }
                 };
-                await axios.get("http://localhost:8000/api/authMe/verify-admin", config);
+                await axios.get("https://autora-backend.vercel.app/api/authMe/verify-admin", config);
                 setIsAllowed(true);
             } catch {
                 setIsAllowed(false);

@@ -30,7 +30,7 @@ const SavedCarsPage = () => {
                         Authorization: `Bearer ${token}`,
                     }
                 };
-                const { data } = await axios.get("http://localhost:8000/api/showCars/fetchSavedCars", config);
+                const { data } = await axios.get("https://autora-backend.vercel.app/api/showCars/fetchSavedCars", config);
 
                 // console.log(data);
                 setSavedCars(data);

@@ -158,7 +158,7 @@ const TestDriveForm = ({ car, testDriveInfo }) => {
             const body = {
                 carId: car._id, bookingDate: selectedDate, startTime: (selectedTimeSlot.split("-")[0]), endTime: (selectedTimeSlot.split("-")[1]), notes: userNotes
             }
-            const { data } = await axios.post("http://localhost:8000/api/test-drive/book", body, config);
+            const { data } = await axios.post("https://autora-backend.vercel.app/api/test-drive/book", body, config);
 
             setBookingDetails({
                 date: format(data?.bookingDate, "EEEE , MMMM d, yyyy"),
