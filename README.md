@@ -1,12 +1,14 @@
-Autora – AI-Powered Car Marketplace
+#Autora – AI-Powered Car Marketplace
 
 Autora is a full-stack car marketplace web application that allows users to browse cars, book test drives, save favorites, and search for cars using AI-powered image analysis. The platform supports role-based access (Admin/User) and is fully deployed using Vercel.
 
-Live Demo
+#Live Demo
+
 Frontend: https://autora-frontend.vercel.app
+
 Backend API: https://autora-backend.vercel.app
 
-User Features
+#User Features
 
 *Secure authentication using Clerk
 
@@ -21,7 +23,7 @@ User Features
 *Responsive UI for all devices
 
 
-Admin Features
+#Admin Features
 
 *Admin dashboard with role-based access
 
@@ -56,9 +58,9 @@ Admin Features
 *Deployed frontend & backend on Vercel
 
 
-Tech Stack
+#Tech Stack
 
-Backend
+#Backend
 
 *Node.js
 
@@ -73,7 +75,7 @@ Backend
 *AI Image Processing APIs
 
 
-Frontend
+#Frontend
 
 *React (Vite)
 
