@@ -3,15 +3,23 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useAuth } from "@clerk/clerk-react";
+import { useNavigate} from "react-router-dom";
 import CarDetails from "../Utils/CarDetails";
 
 const ShowACarPage = () => {
     const { id } = useParams();
     const [carData, setCarData] = useState({});
-    const { getToken } = useAuth();
+    const navigate = useNavigate();
+    const { getToken , isSignedIn , isLoaded} = useAuth();
 
     useEffect(() => {
         const fetchCarData = async () => {
+            if(!isLoaded) return ;
+
+            if (!isSignedIn) {
+                navigate("/sign-in");
+            }
+
             try {
                 const token = await getToken();
                 // console.log("secret ", token);
@@ -33,7 +41,7 @@ const ShowACarPage = () => {
         }
 
         fetchCarData();
-    }, []);
+    }, [isLoaded, isSignedIn]);
 
     if(Object.keys(carData).length === 0){
         return <div className="mt-20 text-center">Loading...</div>

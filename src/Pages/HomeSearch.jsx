@@ -37,6 +37,8 @@ const HomeSearch = () => {
 
             reader.onloadend = () => {
                 setImagePreview(reader.result);
+                // Base 64 url
+                // <img> tag usually url ya base 64 image hi samajh skta hai 
                 setIsUploading(false);
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 toast.success("Image uploaded successfully");
@@ -52,13 +54,16 @@ const HomeSearch = () => {
             setIsUploading(false);
         }
     }, [])
+    // useCallback is a React hook used to memoize a function, so that the same function reference is reused between renders unless its dependencies change.
     const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({
         onDrop,
         accept: {
             "image/*": [".jpeg", ".jpg", ".png"]
         },
+        // JPG & PNG har browser me 100% supported hote hain Desktop + mobile + old browsers → no compatibility issues
         maxFiles: 1
     })
+    // react-dropzone is a React library used to implement drag-and-drop file uploads in web applications.
 
     const handleTextSubmit = (e) => {
         e.preventDefault();
