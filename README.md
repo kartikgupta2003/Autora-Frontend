@@ -1,16 +1,90 @@
-# React + Vite
+#Autora – AI-Powered Car Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Autora is a full-stack car marketplace web application that allows users to browse cars, book test drives, save favorites, and search for cars using AI-powered image analysis. The platform supports role-based access (Admin/User) and is fully deployed using Vercel.
 
-Currently, two official plugins are available:
+#Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend: https://autora-frontend.vercel.app
 
-## React Compiler
+Backend API: https://autora-backend.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+#User Features
 
-## Expanding the ESLint configuration
+*Secure authentication using Clerk
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*Browse cars by make, body type, fuel type, etc.
+
+*Save cars to wishlist
+
+*Book test drives
+
+*AI-powered image-based car search
+
+*Responsive UI for all devices
+
+
+#Admin Features
+
+*Admin dashboard with role-based access
+
+*Manage test drive requests
+
+*AI-assisted car listing creation
+
+*Admin uploads a car image
+
+*AI extracts key vehicle attributes (make, body type, color, category)
+
+*Extracted data is auto-filled to simplify adding listings
+
+*Reduces manual data entry and speeds up inventory management
+
+*Platform & Security Features
+
+*Secure backend APIs with authentication middleware
+
+*Rate-limited AI search endpoints using Arcjet
+
+*Prevents abuse of AI image search
+
+*Protects backend resources from excessive requests
+
+*Production-safe CORS handling
+
+*SPA routing support (no refresh 404 errors)
+
+*Optimized static asset handling
+
+*Deployed frontend & backend on Vercel
+
+
+#Tech Stack
+
+#Backend
+
+*Node.js
+
+*Express.js
+
+*MongoDB + Mongoose
+
+*Clerk Server SDK
+
+*Arcjet (Rate Limiting & Security)
+
+*AI Image Processing APIs
+
+
+#Frontend
+
+*React (Vite)
+
+*Tailwind CSS
+
+*Shadcn UI
+
+*React Router
+
+*Axios
+
+*Clerk Authentication
