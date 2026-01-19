@@ -13,13 +13,13 @@ const ShowACarPage = () => {
     const { getToken , isSignedIn , isLoaded} = useAuth();
 
     useEffect(() => {
+        if(!isLoaded) return ;
+
+        if (!isSignedIn) {
+            navigate("/sign-in");
+        }
         const fetchCarData = async () => {
-            if(!isLoaded) return ;
-
-            if (!isSignedIn) {
-                navigate("/sign-in");
-            }
-
+            
             try {
                 const token = await getToken();
                 // console.log("secret ", token);
