@@ -73,7 +73,7 @@ const AddCarForm = ({ index, setIndex }) => {
             };
             const formData = new FormData();
             formData.append("image", uploadedAiImage);
-            const { data } = await axios.post("https://autora-backend.vercel.app/api/processImage/ai", formData, config);
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/processImage/ai`, formData, config);
 
             // console.log(data);
 
@@ -326,7 +326,7 @@ const AddCarForm = ({ index, setIndex }) => {
                     Authorization: `Bearer ${token}`,
                 }
             };
-            const { data } = await axios.post("https://autora-backend.vercel.app/api/car/addCar", formData, config);
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/car/addCar`, formData, config);
 
             // console.log(data);
 

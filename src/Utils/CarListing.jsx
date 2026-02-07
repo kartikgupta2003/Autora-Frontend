@@ -29,7 +29,7 @@ const CarListing = () => {
                 };
                 // console.log(priceRange);
 
-                const { data } = await axios.get(`https://autora-backend.vercel.app/api/showCars/fetchCar?search=${search}&make=${make}&bodyType=${bodyType}&fuelType=${fuelType}&transmission=${transmission}&minPrice=${priceRange[0]}&maxPrice=${priceRange[1]}&sortBy=${sortBy}&page=${currPage}&limit=${limit}`, config);
+                const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/showCars/fetchCar?search=${search}&make=${make}&bodyType=${bodyType}&fuelType=${fuelType}&transmission=${transmission}&minPrice=${priceRange[0]}&maxPrice=${priceRange[1]}&sortBy=${sortBy}&page=${currPage}&limit=${limit}`, config);
 
                 setFetchedCars(data?.serializedCars);
                 setTotalCars(data?.totalCars);

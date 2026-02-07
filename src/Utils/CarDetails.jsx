@@ -50,7 +50,7 @@ const CarDetails = ({ car, testDriveInfo }) => {
                 }
             };
 
-            const { data } = await axios.get(`http://localhost:8000/api/showCars/toggleCar?id=${car._id}`, config);
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/showCars/toggleCar?id=${car._id}`, config);
             setIsWishListed((prev) => {
                 return (!prev)
             })

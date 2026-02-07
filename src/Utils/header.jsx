@@ -43,7 +43,7 @@ const Header = () => {
                     }
                 };
 
-                const { data } = await axios.post("https://autora-backend.vercel.app/api/authMe/addUser", body, config);
+                const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/authMe/addUser`, body, config);
 
                 // console.log("data aya hai " , data);
 

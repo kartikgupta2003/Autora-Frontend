@@ -21,7 +21,7 @@ const TestDrive = () => {
                     }
                 };
 
-                const { data } = await axios.get(`https://autora-backend.vercel.app/api/showCars/get-car?id=${id}`, config);
+                const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/showCars/get-car?id=${id}`, config);
 
                 // console.log("car ka info test drive pe", data);
                 setCarData(data);
