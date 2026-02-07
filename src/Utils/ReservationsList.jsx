@@ -25,7 +25,7 @@ const ReservationsList = ({ initialData , setRefresh}) => {
                 }
             };
             // console.log("token" , token);
-            const { data } = await axios.get(`https://autora-backend.vercel.app/api/test-drive/delete?id=${id}`,config);
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/test-drive/delete?id=${id}`,config);
 
             setCancelling(false);
             setRefresh((prev)=> !prev);

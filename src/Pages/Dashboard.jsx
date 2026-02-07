@@ -18,7 +18,7 @@ const Dashboard = () => {
                         Authorization: `Bearer ${token}`,
                     }
                 };
-                const {data} = await axios.get("https://autora-backend.vercel.app/api/adminDrive/fetch-dashboard" , config);
+                const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/api/adminDrive/fetch-dashboard` , config);
 
                 setDashBoardData(data);
 

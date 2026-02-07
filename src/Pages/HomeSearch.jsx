@@ -100,7 +100,7 @@ const HomeSearch = () => {
             };
             const formData = new FormData();
             formData.append("image", searchImage);
-            const { data } = await axios.post("https://autora-backend.vercel.app/api/user/searchImage", formData, config);
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/searchImage`, formData, config);
 
             setIsLoading(false);
             navigate(`/cars?make=${data?.make}&bodyType=${data.bodyType}&color=${data.color}`);

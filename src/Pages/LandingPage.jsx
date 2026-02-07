@@ -34,7 +34,7 @@ const LandingPage = () => {
                         Authorization: `Bearer ${token}`,
                     }
                 };
-                const {data} = await axios.get("https://autora-backend.vercel.app/api/user/fetchCars" , config);
+                const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/api/user/fetchCars` , config);
 
                 setFeaturedCars(data);
             }catch(err){
