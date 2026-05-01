@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from '@clerk/clerk-react';
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { Heart, CarFront, Layout, ArrowLeft } from "lucide-react";
+import { Heart, CarFront, Layout, ArrowLeft, BotMessageSquare } from "lucide-react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useAuth } from "@clerk/clerk-react";
@@ -87,6 +87,12 @@ const Header = () => {
                 ) : (
                     <div className="flex items-center space-x-4">
                         <SignedIn>
+                            <Button variant="outline" className="cursor-pointer flex items-center gap-2" onClick={() => navigate("/chatbot")}>
+                                <BotMessageSquare size={18} />
+                                {/* {Renders an icon from lucide-react (used by Shadcn UI). size={18} sets the icon size to 18px. */}
+                                <span>ChatBot</span>
+                                {/* Shows the text Saved Cars only on medium (md) and larger screens. Hidden on small screens. */}
+                            </Button>
                             <Button className="cursor-pointer" onClick={() => navigate("/saved-cars")}>
                                 <Heart size={18} />
                                 {/* {Renders an icon from lucide-react (used by Shadcn UI). size={18} sets the icon size to 18px. */}
