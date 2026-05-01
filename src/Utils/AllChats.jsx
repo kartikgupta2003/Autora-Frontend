@@ -51,11 +51,11 @@ const AllChats = () => {
                     }
                 };
 
-                const {data} = await axios.get("http://localhost:8080/api/chats/fecthChats" , config);
+                const {data} = await axios.get("https://autora-backend.vercel.app/api/chats/fecthChats" , config);
 
                 setThreads(data);
             } catch (err) {
-                console.log(err)
+                // console.log(err)
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 return toast.error(err.message);
             }

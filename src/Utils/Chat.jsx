@@ -39,8 +39,8 @@ const Chat = () => {
                         Authorization: `Bearer ${token}`,
                     }
                 };
-                console.log("fetch ", body)
-                const { data } = await axios.post("http://localhost:8000/ai/fetch", body)
+                // console.log("fetch ", body)
+                const { data } = await axios.post("https://autora-chatbot-backend.vercel.app/ai/fetch", body)
 
                 setMessages(data)
                 setLoadedThread(selectedThread)
@@ -95,7 +95,7 @@ const Chat = () => {
                         thread_name: newThread.name,
                         thread_id: newThread.id
                     }
-                    const { data } = await axios.post("http://localhost:8080/api/chats/addChat", body, config);
+                    const { data } = await axios.post("https://autora-chatbot-backend.vercel.app/api/chats/addChat", body, config);
 
 
 
@@ -127,9 +127,9 @@ const Chat = () => {
                 }
             };
             setInput("")
-            console.log("body ", body)
-            const { data } = await axios.post("http://localhost:8000/ai", body, config);
-            console.log(data)
+            // console.log("body ", body)
+            const { data } = await axios.post("https://autora-chatbot-backend.vercel.app/ai", body, config);
+            // console.log(data)
             setMessages((prv) =>
                 [
                     ...prv,
