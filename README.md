@@ -34,7 +34,8 @@ Backend API: https://autora-backend.vercel.app
 
 ---
 
-##AI Chatbot (Key Features)
+## AI Chatbot
+
 Built as a separate FastAPI microservice integrated with the main Node.js backend
 Uses LangChain for LLM orchestration and tool integration
 Uses LangGraph to manage conversational workflows, state, and multi-step reasoning
