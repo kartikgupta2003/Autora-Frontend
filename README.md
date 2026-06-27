@@ -11,6 +11,14 @@ Backend API: https://autora-backend.vercel.app
 
 ---
 
+## Repos
+
+Frontend: https://github.com/kartikgupta2003/Autora-Frontend  
+Backend: https://github.com/kartikgupta2003/Autora-Backend-
+ChatBot: https://github.com/kartikgupta2003/Autora-Chatbot-Backend-
+
+---
+
 ## User Features
 
 - Secure authentication using Clerk  
