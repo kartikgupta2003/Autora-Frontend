@@ -13,6 +13,7 @@ import TestDrive from './Pages/TestDrive';
 import ReservationsPage from "./Pages/ReservationsPage";
 import Signin from './Pages/Signin';
 import ChatBotPage from './Pages/ChatBotPage';
+import QuestionAnswerPage from './Pages/QuestionAnswerPage';
 import { toast, ToastContainer } from "react-toastify";
 
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/reservations" element={<ReservationsPage/>}></Route>
         <Route path="/sign-in" element={<Signin/>}></Route>
         <Route path="/chatbot" element={<ChatBotPage/>}></Route>
+        <Route path="/qa-page" element={<QuestionAnswerPage/>}></Route>
       </Routes>
       <ToastContainer
         position="top-right"

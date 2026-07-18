@@ -87,6 +87,12 @@ const Header = () => {
                 ) : (
                     <div className="flex items-center space-x-4">
                         <SignedIn>
+                            <Button variant="outline" className="cursor-pointer flex items-center gap-2" onClick={() => navigate("/qa-page")}>
+                                <BotMessageSquare size={18} />
+                                {/* {Renders an icon from lucide-react (used by Shadcn UI). size={18} sets the icon size to 18px. */}
+                                <span>QA-page</span>
+                                {/* Shows the text Saved Cars only on medium (md) and larger screens. Hidden on small screens. */}
+                            </Button>
                             <Button variant="outline" className="cursor-pointer flex items-center gap-2" onClick={() => navigate("/chatbot")}>
                                 <BotMessageSquare size={18} />
                                 {/* {Renders an icon from lucide-react (used by Shadcn UI). size={18} sets the icon size to 18px. */}

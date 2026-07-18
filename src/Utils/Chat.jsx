@@ -182,7 +182,6 @@ const Chat = () => {
                     </div>
                 )}
             </div>
-
             <div className="border-t bg-white p-4">
                 <Textarea
                     ref={textareaRef}
