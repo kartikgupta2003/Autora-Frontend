@@ -56,6 +56,16 @@ Designed to handle both informational queries and action-based workflows
 
 ---
 
+## AI-Powered Document Question Answering (RAG)
+
+- Upload car manuals, insurance policies, and warranty documents
+- Chat with uploaded documents and get accurate, context-aware answers
+- Eliminates the need to manually search through lengthy PDFs
+- Maintains separate document-specific conversations with persistent chat history
+- Powered by LangChain, LangGraph, Gemini Embeddings, Pinecone, and PostgreSQL
+
+---
+
 ## Platform & Security Features
 
 - Secure backend APIs with authentication middleware  
@@ -79,6 +89,8 @@ Designed to handle both informational queries and action-based workflows
 - Python
 - LangChain
 - LangGraph
+- Pinecone
+- PostgreSQL (Neon)
 - Clerk Server SDK
 - Arcjet (Rate Limiting & Security)
 - AI APIs
