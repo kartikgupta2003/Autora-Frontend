@@ -89,7 +89,7 @@ const QAChat = () => {
                 }
                 const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/api/qachats/addChat` , body , config);
 
-                console.log("thread to ban gaya " , data);
+                // console.log("thread to ban gaya " , data);
                 newThread = {
                     "id" : data.thread_id ,
                     "name" : data.thread_name
@@ -98,7 +98,7 @@ const QAChat = () => {
                 setLoadedThread(newThread)
                 setSelectedThread(newThread)
                 setThreads((prv) => [newThread, ...prv]);
-                console.log("Thread jo ab save hua hai backend me " , selectedThread , newThread);
+                // console.log("Thread jo ab save hua hai backend me " , selectedThread , newThread);
             }
             setMessages((prv) =>
                 [
@@ -214,7 +214,7 @@ const QAChat = () => {
                     thread_id: newThread.id
                 }
                 const {data : updatedChat} = await axios.patch(`${import.meta.env.VITE_API_URL}/api/qachats/updateDoc`, body, config);
-                console.log("file upload karne ke bad system " , selectedThread , updatedChat);
+                // console.log("file upload karne ke bad system " , selectedThread , updatedChat);
             }
             setIsUploading(false);
             return toast.success(updateData.message);

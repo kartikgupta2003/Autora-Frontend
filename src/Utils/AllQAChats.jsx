@@ -53,7 +53,7 @@ const AllQAChats = () => {
 
                 const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/api/qachats/fecthChats` , config);
 
-                console.log("chats " , data);
+                // console.log("chats " , data);
 
                 setThreads(data);
             } catch (err) {
