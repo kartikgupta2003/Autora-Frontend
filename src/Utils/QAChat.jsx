@@ -42,7 +42,7 @@ const QAChat = () => {
                         }
                     }
                 }
-                const { data } = await axios.post("http://localhost:8000/qa/fetch", body)
+                const { data } = await axios.post("https://autora-chatbot-backend-production.up.railway.app/qa/fetch", body)
 
                 setMessages(data)
                 setLoadedThread(selectedThread)
@@ -87,7 +87,7 @@ const QAChat = () => {
                     "thread_name": input.slice(0, 30),
                     "thread_id": uuidv4()
                 }
-                const {data} = await axios.post("http://localhost:8080/api/qachats/addChat" , body , config);
+                const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/api/qachats/addChat` , body , config);
 
                 console.log("thread to ban gaya " , data);
                 newThread = {
@@ -127,7 +127,7 @@ const QAChat = () => {
             };
             setInput("")
             // console.log("body ", body)
-            const { data } = await axios.post("http://localhost:8000/ai/answer", body, config);
+            const { data } = await axios.post("https://autora-chatbot-backend-production.up.railway.app/ai/answer", body, config);
             // console.log(data)
             setMessages((prv) =>
                 [
@@ -165,7 +165,7 @@ const QAChat = () => {
                     "thread_name": file.name.slice(0, 30),
                     "thread_id": uuidv4()
                 }
-                const {data} = await axios.post("http://localhost:8080/api/qachats/addChat" , body , config);
+                const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/api/qachats/addChat` , body , config);
 
                 newThread = {
                     "id" : data.thread_id ,
@@ -188,7 +188,7 @@ const QAChat = () => {
             };
             const formData = new FormData();
             formData.append("file", file);
-            const { data : updateData } = await axios.post("http://localhost:8000/upload-pdf", formData, config);
+            const { data : updateData } = await axios.post("https://autora-chatbot-backend-production.up.railway.app/upload-pdf", formData, config);
             // console.log(data);
             setSelectedThread((prv) => {
                 return {
@@ -213,7 +213,7 @@ const QAChat = () => {
                     active_doc_name: file.name,
                     thread_id: newThread.id
                 }
-                const {data : updatedChat} = await axios.patch("http://localhost:8080/api/qachats/updateDoc", body, config);
+                const {data : updatedChat} = await axios.patch(`${import.meta.env.VITE_API_URL}/api/qachats/updateDoc`, body, config);
                 console.log("file upload karne ke bad system " , selectedThread , updatedChat);
             }
             setIsUploading(false);

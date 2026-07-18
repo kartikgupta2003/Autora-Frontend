@@ -51,7 +51,7 @@ const AllQAChats = () => {
                     }
                 };
 
-                const {data} = await axios.get("http://localhost:8080/api/qachats/fecthChats" , config);
+                const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/api/qachats/fecthChats` , config);
 
                 console.log("chats " , data);
 
