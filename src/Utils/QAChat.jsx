@@ -127,7 +127,7 @@ const QAChat = () => {
             };
             setInput("")
             // console.log("body ", body)
-            const { data } = await axios.post("https://autora-chatbot-backend-production.up.railway.app/ai/answer", body, config);
+            const { data } = await axios.post("https://autora-chatbot-backend-production.up.railway.app/qa/answer", body, config);
             // console.log(data)
             setMessages((prv) =>
                 [
@@ -141,10 +141,13 @@ const QAChat = () => {
 
         } catch (err) {
             // console.log(err);
+            let mssg = err.message ;
+            mssg+=". ";
+            mssg +=err?.response?.data?.error
             setIsLoading(false)
             setInput("");
             window.scrollTo({ top: 0, behavior: "smooth" });
-            return toast.error("AI service failed :- " + err.message);
+            return toast.error("AI service failed :- " + mssg);
         }
     }
 
@@ -153,7 +156,7 @@ const QAChat = () => {
             setIsUploading(true);
             let newThread = {...selectedThread};
             const token = await getToken();
-            console.log("thread jisme upload karna hai " , selectedThread);
+            // console.log("thread jisme upload karna hai " , selectedThread);
             if (selectedThread.id === "") {
                 const config = {
                     headers: {

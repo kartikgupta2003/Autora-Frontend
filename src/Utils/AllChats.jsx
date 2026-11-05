@@ -51,7 +51,7 @@ const AllChats = () => {
                     }
                 };
 
-                const {data} = await axios.get("https://autora-backend.vercel.app/api/chats/fecthChats" , config);
+                const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/api/chats/fecthChats` , config);
 
                 setThreads(data);
             } catch (err) {

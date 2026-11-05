@@ -7,7 +7,7 @@ import { Spinner } from "@/components/ui/spinner"
 import { Loader2 } from "lucide-react";
 import { useChat } from "./ChatProvider";
 import { v4 as uuidv4 } from "uuid";
-import { useAuth } from "@clerk/clerk-react";
+import { useAuth , useUser} from "@clerk/clerk-react";
 
 const Chat = () => {
     const { getToken } = useAuth();
@@ -15,6 +15,7 @@ const Chat = () => {
     const [input, setInput] = useState("");
     const [isLoading, setIsLoading] = useState(false)
     const textareaRef = useRef(null);
+    const { user} = useUser();
     const [loadedThread, setLoadedThread] = useState(null)
     const { selectedThread, setSelectedThread, threads, setThreads } = useChat();
     // const config = { 'configurable': { 'thread_id': "1" } };
@@ -95,7 +96,7 @@ const Chat = () => {
                         thread_name: newThread.name,
                         thread_id: newThread.id
                     }
-                    const { data } = await axios.post("https://autora-backend.vercel.app/api/chats/addChat", body, config);
+                    const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/chats/addChat`, body, config);
 
 
 
@@ -118,7 +119,8 @@ const Chat = () => {
             // console.log("gaya " , selectedThread)
             const body = {
                 "user_message": input,
-                "thread_id": newThread.id
+                "thread_id": newThread.id ,
+                "user_id" : user?.id
             }
             const token = await getToken();
             const config = {
@@ -142,9 +144,12 @@ const Chat = () => {
 
         } catch (err) {
             // console.log(err);
+            let mssg = err.message ;
+            mssg+=". ";
+            mssg +=err?.response?.data?.error
             setIsLoading(false)
             window.scrollTo({ top: 0, behavior: "smooth" });
-            return toast.error("AI service failed :- " + err.message);
+            return toast.error("AI service failed :- " + mssg);
         }
     }
 
