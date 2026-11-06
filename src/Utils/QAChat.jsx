@@ -127,7 +127,7 @@ const QAChat = () => {
             };
             setInput("")
             // console.log("body ", body)
-            const { data } = await axios.post("https://autora-chatbot-backend-production.up.railway.app/qa/answer", body, config);
+            const { data } = await axios.post("https://autora-chatbot-backend-production.up.railway.app/ai/answer", body, config);
             // console.log(data)
             setMessages((prv) =>
                 [
